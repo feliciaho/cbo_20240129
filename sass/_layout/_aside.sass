@@ -26,8 +26,11 @@
             padding: 10px 0
             border-bottom: 1px solid #a5744e
             font-weight: 700
+            cursor: pointer
             &:nth-child(4)
                 border: none
+            &:hover
+                color: #49250d
             +media-sp
                 font-size: 1.1rem
                 padding: 5px 0
@@ -47,7 +50,12 @@
             right: -41px
             width: 70px
             height: 70px
-            opacity: 1 !important
+            // opacity: 1 !important
+            transform: rotate(180deg)
+            +media-narrow
+                width: 30px
+                height: 30px
+                right: -20px
             &::before, &::after
                 content: ""
                 position: relative
@@ -55,11 +63,5 @@
                 height: 0px
                 background-color: #ffffff00
                 transform: translate(0%, 0%)
-            >img
-                transform: rotate(180deg)
-            +media-narrow
-                width: 30px
-                height: 30px
-                right: -20px
     &.off
         transform: translateX(-85%)
