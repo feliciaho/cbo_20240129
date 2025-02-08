@@ -1,0 +1,65 @@
+.sideBar
+    position: fixed
+    top: 30%
+    z-index: 999
+    width: 232px
+    height: 344px
+    text-align: center
+    transition: 1s all
+    display: flex
+    align-items: center
+    justify-content: center
+    background: url(../img/sideBarBG.png) no-repeat 0% 0%
+    background-size: contain
+    +media-sp
+        width: 150px
+        height: 220px
+    ul
+        display: flex
+        flex-direction: column
+        justify-content: center
+        list-style: none
+        gap: 3px
+        li
+            color: #a5744e
+            font-size: 1.5rem
+            padding: 10px 0
+            border-bottom: 1px solid #a5744e
+            font-weight: 700
+            &:nth-child(4)
+                border: none
+            +media-sp
+                font-size: 1.1rem
+                padding: 5px 0
+    button
+        position: absolute
+        right: -37px
+        width: 70px
+        height: 70px
+        transition: linear 1s
+        cursor: pointer
+        +media-narrow
+            width: 30px
+            height: 30px
+            right: -20px
+        &.close
+            top: unset
+            right: -41px
+            width: 70px
+            height: 70px
+            opacity: 1 !important
+            &::before, &::after
+                content: ""
+                position: relative
+                width: 0px
+                height: 0px
+                background-color: #ffffff00
+                transform: translate(0%, 0%)
+            >img
+                transform: rotate(180deg)
+            +media-narrow
+                width: 30px
+                height: 30px
+                right: -20px
+    &.off
+        transform: translateX(-85%)

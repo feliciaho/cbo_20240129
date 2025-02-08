@@ -17,8 +17,9 @@
     <link rel="icon" sizes="192x192" href="/img/favicon.ico">
     <meta name="description" content="《黑色契約CABAL Online》 神光庇護">
     <title>《黑色契約CABAL Online》神光庇護</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="sass/app.css">
     <script src="https://unpkg.com/vue@3.2.4/dist/vue.global.js"></script>
+    <script src="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@500;600;700;900&display=swap"></script>
 </head>
 <body>
     <div id="app">
@@ -26,6 +27,7 @@
         <transition name='fade'>
             <div class="mask" v-if="popXL.isModalOpen"></div>
         </transition>
+        <!-- 跳窗XL -->
         <transition name='fade'>
             <div class="popXL" v-if="popXL.isModalOpen">
                 <div class="close" @click="closeModal()">✖</div>
@@ -122,9 +124,11 @@
                 </div>
             </div>
         </transition>
+        <!-- 跳窗遮罩 -->
         <transition name='fade'>
             <div class="mask" v-if="popS.isModalOpen"></div>
         </transition>
+        <!-- 跳窗S -->
         <transition name='fade'>
             <div class="popS" v-if="popS.isModalOpen">
                 <div class="close" @click.prevent="closeModal()">✖</div>
@@ -147,29 +151,8 @@
         </transition>
         <!-- 判斷登入 -->
         <div id="particles-js"></div>
-        <div class="header">
-            <div class="top">
-                    <!-- <form id="logout-form" action="https://www.digeam.com/logout" method="POST"
-                        style="display: none;">
-                        <input type="hidden" name="return_url" id="return_url"
-                            value=''>
-                    </form> -->
-                    <a href="https://cbo.digeam.com/" class="logo" target="blank"></a>
-                    <div class="account">
-                        <div class="login">
-                            <!-- 修改 -->
-                            <div class="accText">%{logIn.account}</div>
-                            <div class="accBtn" @click="logout_dg()"><a>登出</a></div>
-                        </div>
-                        <div class="point">
-                            <div class="poHold">持有點數</div>
-                            <div class="poText">%{ logIn.pointText }</div>
-                            <div class="poBtn"><a href="https://www.digeam.com/member/billing">儲值</a></div>
-                        </div>
-                    </div>
-            </div>
-            </form>
-            <a href="https://cbo.digeam.com/" class="logo" target="blank"></a>
+        <!-- topBar -->
+        <nav class="navBar">
             <!-- 登入 -->
             <!-- <div class="account">
                 <div class="login">
@@ -182,42 +165,72 @@
                     <div class="poBtn"><a href="https://www.digeam.com/member/billing">儲值</a></div>
                 </div>
             </div> -->
-        </div>
-        <div class="actiBut">
-            <div class="prayBut" @click="prayClick()">祈求庇佑</div>
-            <div class="blessBut" @click="blessClick()">加倍祝福</div>
-        </div>
-        <div class="sidebar">
-            <div class="description" @click="openModal(1)">活動說明</div>
-            <div class="gift" @click="openModal(2)">獎勵一覽</div>
-            <div class="notice" @click="openModal(3)">注意事項</div>
-            <div class="history" @click="history('pray');openModal(4)">領取紀錄</div>
+            <!-- 登出 -->
+            <!-- <form id="logout-form" action="https://www.digeam.com/logout" method="POST"
+                style="display: none;">
+                <input type="hidden" name="return_url" id="return_url"
+                    value=''>
+            </form> -->
+            <a href="https://cbo.digeam.com/" class="logo" target="blank">
+                <img src="img/logo.png" alt="黑色契約CABAL Online">
+            </a>
+            <div class="account">
+                <div class="login">
+                    <!-- 修改 -->
+                    <div class="accText">%{logIn.account}</div>
+                    <div class="accBtn" @click="logout_dg()"><a>登出</a></div>
+                </div>
+                <div class="point">
+                    <div class="poHold">持有點數</div>
+                    <div class="poText">%{ logIn.pointText }</div>
+                    <div class="poBtn"><a href="https://www.digeam.com/member/billing">儲值</a></div>
+                </div>
+            </div>
+        </nav>
+        <!-- sideBar -->
+        <aside class="sideBar">
+            <ul>
+                <li class="active" @click="openModal(1)">活動說明</li>
+                <li @click="openModal(2)">獎勵一覽</li>
+                <li @click="openModal(3)">注意事項</li>
+                <li @click="history('pray');openModal(4)">領取紀錄</li>
+            </ul>
+            <button class="btn-on" @click="asideToggle()"><img class="openBtn" src="img/arrow.png"></button>
+        </aside>
+        <!-- header -->
+        <div class="header">
+            <div class="title">
+                <img src="/img/headerTitle2.png" alt="神光庇護">
+            </div>
+            <div class="actiBut">
+                <div class="prayBut" @click="prayClick()">祈求庇佑</div>
+                <div class="blessBut" @click="blessClick()">加倍祝福</div>
+            </div>
         </div>
     </div>
+    <!-- footer -->
     <footer>
-        <div class="footerbox">
-            <div class="footerbox_logo">
-                <a class="logo_digeam"><img class="digeamlogo" src="img/logo_digeam.png"></a>
-                <a class="logo_rw"><img class="ESTlogo" src="img/est.png"></a>
-            </div>
-            <div class="spec">
-                <a href="https://www.digeam.com/terms" target="_blank">會員服務條款</a>
-                <a href="https://www.digeam.com/terms2" target="_blank">隱私條款</a>
-                <a href="https://www.digeam.com/cs" target="_blank">客服中心</a>
-                <p class="Copyright">Copyright © ESTgames Corp. All rights reserved.<br />2023 Licensed and
-                    published
-                    for Taiwan, Hong Kong and Macau by DiGeam Co.,Ltd<br />CABAL Online is a registered trademark of
-                    ESTgames Corp (and the logo of ESTgames).</p>
-            </div>
-            <div class="classlavel">
-                <div><img src="img/icon_15.png" alt="輔15級"></div>
-                <ul>
-                    <li>本遊戲為免費使用，部分內容涉及暴力情節。</li>
-                    <li>遊戲內另提供購買虛擬遊戲幣、物品等付費服務。</li>
-                    <li>請注意遊戲時間，避免沉迷。</li>
-                    <li>本遊戲服務區域包含台灣、香港、澳門。</li>
-                </ul>
-            </div>
+        <div class="company">
+            <a class="logo_digeam"><img class="digeamlogo" src="img/logo_digeam.png"></a>
+            <a class="logo_rw"><img class="ESTlogo" src="img/est.png"></a>
+        </div>
+        <div class="spec">
+            <a href="https://www.digeam.com/terms" target="_blank">會員服務條款</a>
+            <a href="https://www.digeam.com/terms2" target="_blank">隱私條款</a>
+            <a href="https://www.digeam.com/cs" target="_blank">客服中心</a>
+            <p class="Copyright">Copyright © ESTgames Corp. All rights reserved.<br />2023 Licensed and
+                published
+                for Taiwan, Hong Kong and Macau by DiGeam Co.,Ltd<br />CABAL Online is a registered trademark of
+                ESTgames Corp (and the logo of ESTgames).</p>
+        </div>
+        <div class="ageLimit">
+            <div><img src="img/icon_15.png" alt="輔15級"></div>
+            <ul>
+                <li>本遊戲為免費使用，部分內容涉及暴力情節。</li>
+                <li>遊戲內另提供購買虛擬遊戲幣、物品等付費服務。</li>
+                <li>請注意遊戲時間，避免沉迷。</li>
+                <li>本遊戲服務區域包含台灣、香港、澳門。</li>
+            </ul>
         </div>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

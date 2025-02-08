@@ -1,0 +1,57 @@
+nav
+    width: 100%
+    position: fixed
+    display: flex
+    justify-content: space-between
+    z-index: 999
+    color: #513200
+    a
+        color: #513200
+        &:hover
+            color: #e5981c
+            transition: .2s linear
+            cursor: pointer
+    .account
+        display: flex
+        flex-direction: column
+        position: relative
+        right: 1%
+        top: 10px
+        .login
+            background: url("../img/loginBar.png") no-repeat
+            background-size: contain
+            width: 263px
+            height: 38px
+            display: flex
+            align-items: center
+            justify-content: space-between
+            +media-sp
+                width: 200px
+                height: 30px
+            .accText
+                position: relative
+                margin-left: 10px
+            .accBtn
+                position: relative
+                margin-right: 15px
+        .point
+            background: url("../img/pointBar.png") no-repeat
+            background-size: contain
+            width: 263px
+            height: 38px
+            display: flex
+            align-items: center
+            +media-sp
+                width: 200px
+                height: 30px
+            .poHold
+                position: relative
+                margin-left: 10px
+            .poText
+                position: relative
+                margin-left: 15px
+            .poBtn
+                position: absolute
+                right: 15px
+                a
+                    border: none
