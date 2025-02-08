@@ -568,6 +568,7 @@ footer .ageLimit {
   max-width: 650px;
   max-height: 350px;
   overflow-y: auto;
+  text-align: start;
 }
 .popXL .popWrap span {
   color: #b3280f;
