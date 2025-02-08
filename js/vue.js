@@ -393,7 +393,7 @@ Vue.createApp({
         openPop() {
             this.popS.isModalOpen = true;
         },
-        // aside
+        // aside toggle
         asideToggle() {
             document.querySelector(".btn-on").classList.toggle("close");
             document.querySelector(".sideBar").classList.toggle("off");
