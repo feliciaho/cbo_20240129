@@ -19,11 +19,10 @@
     <title>《黑色契約CABAL Online》神光庇護</title>
     <link rel="stylesheet" href="sass/app.css">
     <script src="https://unpkg.com/vue@3.2.4/dist/vue.global.js"></script>
-    <script src="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@500;600;700;900&display=swap"></script>
 </head>
 <body>
     <div id="app">
-        <!-- 跳窗 -->
+        <!-- 跳窗遮罩-->
         <transition name='fade'>
             <div class="mask" v-if="popXL.isModalOpen"></div>
         </transition>
