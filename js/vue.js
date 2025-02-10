@@ -806,6 +806,7 @@ Vue.createApp({
             "retina_detect": true
 
         });
+        
     },
 }).mount("#app");
 
