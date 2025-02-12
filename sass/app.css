@@ -333,7 +333,7 @@ nav .account .login {
 }
 @media only screen and (max-width: 767px) {
   nav .account .login {
-    width: 200px;
+    width: 210px;
     height: 30px;
   }
 }
@@ -355,13 +355,13 @@ nav .account .point {
 }
 @media only screen and (max-width: 767px) {
   nav .account .point {
-    width: 200px;
+    width: 210px;
     height: 30px;
   }
 }
 nav .account .point .poHold {
   position: relative;
-  margin-left: 10px;
+  margin-left: 8px;
 }
 nav .account .point .poText {
   position: relative;
