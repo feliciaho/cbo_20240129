@@ -147,7 +147,7 @@ body {
 }
 @media only screen and (max-width: 480px) {
   body {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
@@ -519,11 +519,11 @@ footer .ageLimit {
 }
 @media only screen and (max-width: 767px) {
   .popXL {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }
 .popXL .popTitle {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 .popXL .tabAll {
   margin-top: 10px;
