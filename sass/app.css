@@ -162,6 +162,10 @@ body {
   z-index: 99;
 }
 
+.vl-overlay .vl-background {
+  opacity: 0.9 !important;
+}
+
 .header {
   position: relative;
   background: url(../img/s1Bg.jpg) no-repeat 15% 0%;
